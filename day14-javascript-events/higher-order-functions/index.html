@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Higher order functions</title>
+</head>
+<body>
+
+    <h1>Time elapsed...</h1>
+
+    <button onclick="sayNow()">Say now</button>
+
+    <button onclick="clearTimeout(timeout_identifier)">Stop "now" timeout</button>
+    <button onclick="clearInterval(interval_identifier)">Stop interval</button>
+
+    <script>
+
+        const sayNow = () => {
+            document.querySelector('h1').innerText += 'now!';
+        }
+
+        /**
+         * function that creates functions that add text to the end of elements
+         */
+        const createElementChanger = (element_selector, text_to_be_added) => {
+            const created_function = () => {
+                document.querySelector(element_selector).innerHTML += text_to_be_added;
+            }
+
+            return created_function;
+        }
+
+        // create a timeout that will write 'now!' at the end of <h1>
+        // after 2s
+        const timeout_identifier = setTimeout(createElementChanger('h1', 'now!'), 2000);
+
+        // create a timeout that will write 'End of document' at the end of
+        // the document after 3s
+        setTimeout(createElementChanger('body', 'End of document'), 3000);
+
+        let time_elapsed = 0;
+
+        // create an interval that would put the time elapsed into the <title>
+        // every second
+        const interval_identifier = setInterval(() => {
+            time_elapsed++;
+            document.querySelector('title').innerHTML = 'Time elapsed: ' + time_elapsed + 's';
+        }, 1000);
+
+    </script>
+
+</body>
+</html>

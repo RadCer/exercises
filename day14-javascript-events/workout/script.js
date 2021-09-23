@@ -26,3 +26,8 @@ function calculate() {
     // resets the input field to 0
     document.querySelector('.calculator__input').value = 0;
 }
+
+function calculate_ugly() {
+    document.querySelector('.calculator__result').textContent = Number(document.querySelector('.calculator__result').textContent) + Number(document.querySelector('.calculator__input').value);
+    document.querySelector('.calculator__input').value = 0;
+}
