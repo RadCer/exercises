@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+.pretty-checkbox__widget {
+    height: 1.5em;
+    width: 3em;
+    border: 1px solid black;
+    border-radius: 1.5em;
+    position: relative;
+    cursor: pointer;
+    background-color: red;
+}
+
+.pretty-checkbox--on .pretty-checkbox__widget {
+    background-color: green;
+}
+
+.pretty-checkbox__bullet {
+    height: calc(1.5em - 2px);
+    width: calc(1.5em - 2px);
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: white;
+}
+
+.pretty-checkbox--on .pretty-checkbox__bullet {
+    left: auto;
+    right: 0;
+}
