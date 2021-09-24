@@ -16,7 +16,7 @@
 
             <label for="">Are you happy?</label>
 
-            <div id="happy-checkbox" class="pretty-checkbox">
+            <div class="pretty-checkbox">
                 <input type="checkbox" value="1" name="happy" checked>
 
                 <div class="pretty-checkbox__widget">
@@ -30,7 +30,64 @@
 
             <label for="">Could you be happier?</label>
 
-            <div id="happier-checkbox" class="pretty-checkbox">
+            <div class="pretty-checkbox">
+                <input type="checkbox" value="1" name="happier">
+
+                <div class="pretty-checkbox__widget">
+                    <div class="pretty-checkbox__bullet"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="">Could you be happier?</label>
+
+            <div class="pretty-checkbox">
+                <input type="checkbox" value="1" name="happier">
+
+                <div class="pretty-checkbox__widget">
+                    <div class="pretty-checkbox__bullet"></div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="">Could you be happier?</label>
+
+            <div class="pretty-checkbox">
+                <input type="checkbox" value="1" name="happier">
+
+                <div class="pretty-checkbox__widget">
+                    <div class="pretty-checkbox__bullet"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="">Could you be happier?</label>
+
+            <div class="pretty-checkbox">
+                <input type="checkbox" value="1" name="happier">
+
+                <div class="pretty-checkbox__widget">
+                    <div class="pretty-checkbox__bullet"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+
+            <label for="">Could you be happier?</label>
+
+            <div class="pretty-checkbox">
                 <input type="checkbox" value="1" name="happier">
 
                 <div class="pretty-checkbox__widget">
@@ -50,8 +107,12 @@
         // pretty_checkbox('#happy-checkbox');
         // pretty_checkbox('#happier-checkbox');
 
-        prettyCheckbox('#happy-checkbox');
-        prettyCheckbox('#happier-checkbox');
+        document.querySelectorAll('.pretty-checkbox').forEach(checkbox => {
+            prettyCheckbox(checkbox)
+        })
+
+        // prettyCheckbox('#happy-checkbox');
+        // prettyCheckbox('#happier-checkbox');
 
     </script>
 

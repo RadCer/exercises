@@ -3,7 +3,7 @@
  *                   within which the entire widget exists
  *                   IS DIFFERENT FOR EVERY CALL
  */
-function pretty_checkbox(selector) {
+function pretty_checkbox(container) {
 
     // use the passed-in selector (e.g. '#happy-checkbox')
     // to find the container element (e.g.

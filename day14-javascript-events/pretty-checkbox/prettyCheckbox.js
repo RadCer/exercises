@@ -1,8 +1,8 @@
-function prettyCheckbox(selector) {
+function prettyCheckbox(container) {
 
     let on = false;
 
-    const container = document.querySelector(selector);
+    // const container = document.querySelector(selector);
     const widget = container.querySelector('.pretty-checkbox__widget');
     const checkbox = container.querySelector('input[type="checkbox"]');
 
