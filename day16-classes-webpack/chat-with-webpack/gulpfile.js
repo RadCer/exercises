@@ -2,6 +2,7 @@
 const gulp         = require('gulp');
 const del          = require('del');
 const fs           = require('fs');
+const path         = require('path');
 const browsersync_server = require('browser-sync').create();
 const htmlmin      = require('gulp-htmlmin');
 const sass         = require('gulp-sass')(require('sass'));
@@ -71,6 +72,10 @@ function createStructure(done) {
 
     files.forEach(file => {
         if(!fs.existsSync(file)) {
+            const dir = path.dirname(file);
+            if(!fs.existsSync(dir)) {
+                fs.mkdirSync(dir);
+            }
             fs.writeFileSync(file, '');
             console.log('file created:', file);
         }
