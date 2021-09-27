@@ -38,6 +38,8 @@ container.insertBefore(h1_element, button);
 
 container.removeChild(button);
 
+console.log( button );
+
 h1_element.classList.add('clickable');
 
 
@@ -54,5 +56,39 @@ h2.classList.add('current-headline');
 
 container.appendChild(h2);
 
+container.appendChild(button);
+
 
 console.log( container.innerHTML );
+
+document.querySelector('.close-message').addEventListener('click', () => {
+    const text = document.querySelector('.text');
+    const container = text.parentElement;
+
+    container.removeChild(text);
+})
+
+document.querySelector('.understood').addEventListener('click', () => {
+    // find its nearest parent that has the .container class
+    let current = document.querySelector('.understood');
+    let parent = current.parentElement;
+
+    do {
+        if (parent === null) {
+            console.log('container not found');
+            break;
+        }
+        if (parent.classList.contains('container')) {
+            console.log('found container: ', parent);
+            break;
+        } else {
+            current = parent;
+            parent = current.parentElement;
+        }
+    } while (parent);
+
+    // add a class saying that it is understood
+    if (parent) {
+        parent.classList.add('container--understood');
+    }
+})
